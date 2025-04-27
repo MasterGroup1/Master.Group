@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Group - Your Full-Service Marketing Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            color: #333;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: hwb(284 2% 47%);
+            font-weight: bold;
+        }
+        section {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero {
+            background: url('https://picsum.photos/1600/600') no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2em;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 10px 0;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: hwb(284 0% 0%);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <h1>From Strategy to Success</h1>
+    <p>Your Full-Service Marketing Partner</p>
+    <a href="#contact" class="button">Book Your Free Strategy Call</a>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Master Group (MGC Agency) is a full-service digital marketing agency offering A-Z marketing solutions tailored to businesses of all sizes. Our mission is to drive results through creativity and strategic thinking.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <div class="service-card">
+            <h3>Strategy & Planning</h3>
+            <p>Comprehensive marketing strategies tailored to your business needs.</p>
+            <p>Starting From: $X,XXX</p>
+        </div>
+        <div class="service-card">
+            <h3>Branding & Creative</h3>
+            <p>Creative solutions to build and enhance your brand identity.</p>
+            <p>Starting From: $X,XXX</p>
+        </div>
+        <div class="service-card">
+            <h3>Content & Social</h3>
+            <p>Engaging content creation and social media management.</p>
+            <p>Starting From: $X,XXX</p>
+        </div>
+        <div class="service-card">
+            <h3>Website & SEO</h3>
+            <p>Optimized websites and SEO strategies to increase visibility.</p>
+            <p>Starting From: $X,XXX</p>
+        </div>
+        <div class="service-card">
+            <h3>Media Buying & Paid Ads</h3>
+            <p>Targeted advertising strategies to maximize ROI.</p>
+            <p>Starting From: $X,XXX</p>
+        </div>
+        <div class="service-card">
+            <h3>Analytics & Reporting</h3>
+            <p>Data-driven insights to inform your marketing decisions.</p>
+            <p>Starting From: $X,XXX</p>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Our Portfolio</h2>
+    <p>Check out our recent projects and case studies that showcase our expertise and results.</p>
+    <p>Links to video/design portfolios directly in this section.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you're ready to take your marketing to the next level, get in touch with us!</p>
+    <a href="mailto:empollack330@gmail.com?subject=Inquiry%20from%20Website" class="button">Contact Us</a>
+    <p>Connect with us on <a href="https://www.linkedin.com/in/emily-m-pollack?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a></p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Master Group. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
+echo "# Master.Group" >> README.md
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/MasterGroup1/Master.Group.git
+git push -u origin main
