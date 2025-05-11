@@ -1,167 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Group - Your Full-Service Marketing Partner</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-            line-height: 1.6;
-            color: #333;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: hwb(284 2% 47%);
-            font-weight: bold;
-        }
-        section {
-            padding: 100px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .hero {
-            background: url('https://picsum.photos/1600/600') no-repeat center center/cover;
-            color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        h2 {
-            font-size: 2em;
-            margin: 20px 0;
-        }
-        p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 10px 0;
-        }
-        .button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: white;
-            background-color: hwb(284 0% 0%);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .service-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 10px;
-            width: 300px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Master Group – Your Full-Service Marketing Partner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Reset & Box-Sizing */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    /* Root Variables */
+    :root {
+      --clr-primary: #5a31f4;
+      --clr-accent: #ffb800;
+      --clr-bg: #f7f8fa;
+      --clr-white: #ffffff;
+      --clr-dark: #1e1e1e;
+      --clr-gray: #6c6c6c;
+      --ff-base: 'Inter', sans-serif;
+      --transition: 0.3s ease;
+      --max-width: 1200px;
+      --spacing: 1.5rem;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--ff-base);
+      background-color: var(--clr-bg);
+      color: var(--clr-dark);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img {
+      display: block; max-width: 100%; height: auto;
+    }
+    .container {
+      width: 90%; max-width: var(--max-width);
+      margin: 0 auto; padding: var(--spacing) 0;
+    }
+
+    /* Navbar */
+    header {
+      position: sticky; top: 0; width: 100%;
+      backdrop-filter: blur(15px);
+      background-color: rgba(255,255,255,0.6);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+    nav {
+      display: flex; justify-content: center; gap: 2rem;
+      padding: 1rem 0;
+    }
+    nav a {
+      font-weight: 600; position: relative;
+      transition: var(--transition);
+    }
+    nav a::after {
+      content: ''; position: absolute;
+      width: 0; height: 2px; background: var(--clr-primary);
+      left: 50%; bottom: -4px;
+      transform: translateX(-50%);
+      transition: var(--transition);
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(
+          to bottom right,
+          rgba(90,49,244,0.8),
+          rgba(255,184,0,0.8)
+        ),
+        url('static/image1.jpg') center/cover no-repeat;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center; color: var(--clr-white);
+      padding: 0 var(--spacing);
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700; margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      max-width: 600px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--clr-white);
+      background: var(--clr-accent);
+      border-radius: 50px;
+      transition: var(--transition);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--clr-primary);
+    }
+
+    main section { padding: var(--spacing) 0; }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--clr-dark);
+    }
+
+    /* About */
+    #about .content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing);
+      text-align: center;
+    }
+    #about .content img {
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    @media(min-width: 768px) {
+      #about .content {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+      }
+    }
+
+    /* Services */
+    #services .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--spacing);
+    }
+    .service-card {
+      background: var(--clr-white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    .service-card h3 {
+      margin-bottom: 0.75rem;
+      color: var(--clr-primary);
+    }
+    .service-card p {
+      color: var(--clr-gray);
+    }
+
+    /* Portfolio */
+    #portfolio ul {
+      display: grid;
+      gap: var(--spacing);
+    }
+    #portfolio li {
+      background: var(--clr-white);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+    #portfolio li:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Contact */
+    #contact form {
+      display: grid;
+      gap: var(--spacing);
+      max-width: 500px;
+      margin: 1rem auto 0;
+    }
+    #contact-form input,
+    #contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-family: var(--ff-base);
+      transition: var(--transition);
+    }
+    #contact-form input:focus,
+    #contact-form textarea:focus {
+      outline: none;
+      border-color: var(--clr-primary);
+      box-shadow: 0 0 0 3px rgba(90,49,244,0.2);
+    }
+    #contact-form button {
+      justify-self: center;
+      width: 50%;
+      padding: 0.75rem;
+      background: var(--clr-primary);
+      color: var(--clr-white);
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    #contact-form button:hover {
+      background: var(--clr-accent);
+    }
+    #form-status {
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--clr-dark);
+      color: var(--clr-gray);
+      text-align: center;
+      padding: var(--spacing) 0;
+    }
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-</nav>
+  <header>
+    <nav class="container">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-    <h1>From Strategy to Success</h1>
-    <p>Your Full-Service Marketing Partner</p>
-    <a href="#contact" class="button">Book Your Free Strategy Call</a>
-</section>
+  <main>
+    <section class="hero">
+      <h1>Your End-to-End Digital Marketing Partner</h1>
+      <p>From strategic planning to execution and optimization, we help brands grow with powerful, data-driven marketing solutions tailored to scale.</p>
+      <a href="#contact" class="btn">Book a Strategy Call</a>
+    </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>Master Group (MGC Agency) is a full-service digital marketing agency offering A-Z marketing solutions tailored to businesses of all sizes. Our mission is to drive results through creativity and strategic thinking.</p>
-</section>
+    <section id="about" class="container">
+      <h2>Our Story</h2>
+      <div class="content">
+        <div>
+          <p>Master Group was co-founded by Emily Pollack and Roy Friedman—two marketers with a shared vision of merging strategy, creativity, and performance under one roof. With deep expertise across tech, e-commerce, content, and product marketing, they've helped brands grow from idea to execution and beyond.</p>
+          <p>We don't believe in cookie-cutter solutions. Every plan is fully customized based on your goals, challenges, and growth potential. Whether you're launching, scaling, or optimizing, our team is built to take you there.</p>
+        </div>
+        <img src="static/image1.jpg" alt="Our Team">
+      </div>
+    </section>
 
-<section id="services">
-    <h2>Our Services</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <section id="services" class="container">
+      <h2>Our Services</h2>
+      <div class="grid">
         <div class="service-card">
-            <h3>Strategy & Planning</h3>
-            <p>Comprehensive marketing strategies tailored to your business needs.</p>
-            <p>Starting From: $X,XXX</p>
+          <h3>Strategy Development</h3>
+          <p>Go-to-market plans, audience targeting, and positioning.</p>
         </div>
         <div class="service-card">
-            <h3>Branding & Creative</h3>
-            <p>Creative solutions to build and enhance your brand identity.</p>
-            <p>Starting From: $X,XXX</p>
+          <h3>Branding & Design</h3>
+          <p>Logo creation, brand identity, and messaging.</p>
         </div>
         <div class="service-card">
-            <h3>Content & Social</h3>
-            <p>Engaging content creation and social media management.</p>
-            <p>Starting From: $X,XXX</p>
+          <h3>Content & Social</h3>
+          <p>Blog writing, video content, and influencer partnerships.</p>
         </div>
         <div class="service-card">
-            <h3>Website & SEO</h3>
-            <p>Optimized websites and SEO strategies to increase visibility.</p>
-            <p>Starting From: $X,XXX</p>
+          <h3>Website & SEO</h3>
+          <p>UX/UI design, development, and CRO.</p>
         </div>
         <div class="service-card">
-            <h3>Media Buying & Paid Ads</h3>
-            <p>Targeted advertising strategies to maximize ROI.</p>
-            <p>Starting From: $X,XXX</p>
+          <h3>Performance Ads</h3>
+          <p>Google, Meta, YouTube & Display campaigns.</p>
         </div>
         <div class="service-card">
-            <h3>Analytics & Reporting</h3>
-            <p>Data-driven insights to inform your marketing decisions.</p>
-            <p>Starting From: $X,XXX</p>
+          <h3>Retention</h3>
+          <p>Email marketing, CRM flows, loyalty campaigns.</p>
         </div>
-    </div>
-</section>
+        <div class="service-card">
+          <h3>Influencer & Affiliate</h3>
+          <p>Campaign sourcing, management & scaling.</p>
+        </div>
+        <div class="service-card">
+          <h3>Product Optimization</h3>
+          <p>MVP development, product strategy, roadmaps.</p>
+        </div>
+        <div class="service-card">
+          <h3>Analytics & Reporting</h3>
+          <p>Dashboards, monthly reports, insight-driven improvements.</p>
+        </div>
+      </div>
+    </section>
 
-<section id="portfolio">
-    <h2>Our Portfolio</h2>
-    <p>Check out our recent projects and case studies that showcase our expertise and results.</p>
-    <p>Links to video/design portfolios directly in this section.</p>
-</section>
+    <section id="portfolio" class="container">
+      <h2>Case Studies</h2>
+      <ul>
+        <li>Eternos – AI Memory preservation: Repositioning, performance campaigns, content storytelling.</li>
+        <li>Jackpota – Business Consulting: Marketing strategy, CRO, influencer testing.</li>
+        <li>Playtika – Monetization: LTV enhancement with engagement loops and segmentation.</li>
+        <li>Gamblits – Retention: Loyalty tactics and A/B testing.</li>
+        <li>Moonshot AI – GTM: Roadmap planning and launch campaigns.</li>
+      </ul>
+      <img src="static/image2.png" alt="Project Highlight" style="margin-top:var(--spacing); border-radius:10px;">
+    </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>If you're ready to take your marketing to the next level, get in touch with us!</p>
-    <a href="mailto:empollack330@gmail.com?subject=Inquiry%20from%20Website" class="button">Contact Us</a>
-    <p>Connect with us on <a href="https://www.linkedin.com/in/emily-m-pollack?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">LinkedIn</a></p>
-</section>
+    <section id="contact" class="container">
+      <h2>Contact Us</h2>
+      <p>Ready to grow your brand? Let’s build something that works.</p>
 
-<footer>
+      <form id="contact-form"
+            action="https://formspree.io/f/meoglapw"
+            method="POST"
+            novalidate>
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="company" placeholder="Company" required>
+        <textarea name="message" rows="5" placeholder="What are you looking for?" required></textarea>
+
+        <!-- honeypot נגד בוטים -->
+        <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+        <!-- הגדרות נוספות ל-Formspree -->
+        <input type="hidden" name="_subject" value="New message from website">
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="form-status" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form   = document.getElementById("contact-form");
+      const status = document.getElementById("form-status");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        status.textContent = "Sending…";
+
+        const data = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            form.reset();
+            status.textContent = "Thank you! Your message has been sent.";
+            status.style.color = "green";
+          } else {
+            const error = await response.json();
+            status.textContent = error?.error || "Oops! There was a problem.";
+            status.style.color = "red";
+          }
+        } catch (err) {
+          status.textContent = "Network error. Please try again.";
+          status.style.color = "red";
+        }
+      });
+    });
+  </script>
+
+  <footer>
     <p>&copy; 2025 Master Group. All rights reserved.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
